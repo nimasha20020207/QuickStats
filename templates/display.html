@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Results - Simple Data Insights</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>📈 Data Insights</h1>
+            <p>Your uploaded dataset has been successfully analyzed.</p>
+        </header>
+
+        <section class="card">
+            <h2>🗂 Data Preview</h2>
+            <div class="content">
+                {{ preview|safe }}
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📊 Summary Statistics</h2>
+            <div class="content">
+                {{ stats|safe }}
+            </div>
+        </section>
+
+        <section class="card chart-section">
+            <h2>📉 Visualization</h2>
+            <div class="content chart">
+                <img src="{{ url_for('static', filename='chart.png') }}" alt="Chart" class="chart-img">
+            </div>
+        </section>
+
+        <footer>
+            <a href="/" class="back-btn">⬅ Back to Upload</a>
+        </footer>
+    </div>
+    </body>
+</html>

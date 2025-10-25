@@ -1,0 +1,151 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Overlay for readability */
+.overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Split container for two sides */
+.container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Left side - Image & text */
+.left-side {
+    flex: 1;
+    background: linear-gradient(to bottom right, #007bff, #00bcd4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.left-side img {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.left-side h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.left-side p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 350px;
+}
+
+/* Right side - Upload form */
+.right-side {
+    flex: 1;
+    background: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.right-side h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.right-side p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* File input */
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .left-side {
+        padding: 30px 20px;
+    }
+
+    .right-side {
+        padding: 30px 25px;
+    }
+
+    .left-side img {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .left-side h2 {
+        font-size: 1.6rem;
+    }
+
+    .right-side h1 {
+        font-size: 1.8rem;
+    }
+}

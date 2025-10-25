@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Data Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <!-- Left Side -->
+            <div class="left-side">
+                <img src="{{ url_for('static', filename='bg3.png') }}" alt="Data Insights">
+                <h2>Explore Your Data</h2>
+                <p>Discover trends and insights from your datasets with just one upload.</p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side">
+                <h1> QuickStats</h1>
+                <p>Simple Data Insights : Upload your CSV file to quickly analyze your data and view visual insights.</p>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".csv" required>
+                    <button type="submit">Upload & Analyze</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
